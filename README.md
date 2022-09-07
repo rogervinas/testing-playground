@@ -1,3 +1,5 @@
+[![CI](https://github.com/rogervinas/testing-playground/actions/workflows/gradle.yml/badge.svg)](https://github.com/rogervinas/testing-playground/actions/workflows/gradle.yml)
+
 # Testing Playground
 
 ## Snapshot Testing
