@@ -1,0 +1,8 @@
+SnapshotTesting.should do something more=[
+MyResult(oneInteger=-1507107730, oneDouble=0.5918906569877206, oneString=, oneDateTime=2022-09-07T16:51:34.038919)
+]
+
+
+SnapshotTesting.should do something=[
+MyResult(oneInteger=7, oneDouble=25.900000000000002, oneString=aaaaaaa, oneDateTime=2022-05-03T13:46:18)
+]
