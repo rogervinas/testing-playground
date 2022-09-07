@@ -1,8 +1,108 @@
 SnapshotTesting.should do something more=[
-MyResult(oneInteger=-1507107730, oneDouble=0.5918906569877206, oneString=, oneDateTime=2022-09-07T16:51:34.038919)
+  {
+    "oneDateTime": "2022-09-07T15:08:33",
+    "oneDouble": 0.9674640571461748,
+    "oneInteger": -984488024,
+    "oneString": ""
+  }
 ]
 
 
-SnapshotTesting.should do something=[
-MyResult(oneInteger=7, oneDouble=25.900000000000002, oneString=aaaaaaa, oneDateTime=2022-05-03T13:46:18)
+SnapshotTesting.should do something[10]=[
+  {
+    "oneDateTime": "2022-05-03T13:46:18",
+    "oneDouble": 37.0,
+    "oneInteger": 10,
+    "oneString": "aaaaaaaaaa"
+  }
+]
+
+
+SnapshotTesting.should do something[1]=[
+  {
+    "oneDateTime": "2022-05-03T13:46:18",
+    "oneDouble": 3.7,
+    "oneInteger": 1,
+    "oneString": "a"
+  }
+]
+
+
+SnapshotTesting.should do something[2]=[
+  {
+    "oneDateTime": "2022-05-03T13:46:18",
+    "oneDouble": 7.4,
+    "oneInteger": 2,
+    "oneString": "aa"
+  }
+]
+
+
+SnapshotTesting.should do something[3]=[
+  {
+    "oneDateTime": "2022-05-03T13:46:18",
+    "oneDouble": 11.100000000000001,
+    "oneInteger": 3,
+    "oneString": "aaa"
+  }
+]
+
+
+SnapshotTesting.should do something[4]=[
+  {
+    "oneDateTime": "2022-05-03T13:46:18",
+    "oneDouble": 14.8,
+    "oneInteger": 4,
+    "oneString": "aaaa"
+  }
+]
+
+
+SnapshotTesting.should do something[5]=[
+  {
+    "oneDateTime": "2022-05-03T13:46:18",
+    "oneDouble": 18.5,
+    "oneInteger": 5,
+    "oneString": "aaaaa"
+  }
+]
+
+
+SnapshotTesting.should do something[6]=[
+  {
+    "oneDateTime": "2022-05-03T13:46:18",
+    "oneDouble": 22.200000000000003,
+    "oneInteger": 6,
+    "oneString": "aaaaaa"
+  }
+]
+
+
+SnapshotTesting.should do something[7]=[
+  {
+    "oneDateTime": "2022-05-03T13:46:18",
+    "oneDouble": 25.900000000000002,
+    "oneInteger": 7,
+    "oneString": "aaaaaaa"
+  }
+]
+
+
+SnapshotTesting.should do something[8]=[
+  {
+    "oneDateTime": "2022-05-03T13:46:18",
+    "oneDouble": 29.6,
+    "oneInteger": 8,
+    "oneString": "aaaaaaaa"
+  }
+]
+
+
+SnapshotTesting.should do something[9]=[
+  {
+    "oneDateTime": "2022-05-03T13:46:18",
+    "oneDouble": 33.300000000000004,
+    "oneInteger": 9,
+    "oneString": "aaaaaaaaa"
+  }
 ]

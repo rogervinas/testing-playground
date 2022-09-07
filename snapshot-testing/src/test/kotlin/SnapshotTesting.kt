@@ -2,9 +2,14 @@ import au.com.origin.snapshots.Expect
 import au.com.origin.snapshots.junit5.SnapshotExtension
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.ValueSource
+import java.time.Clock
+import java.time.Instant
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
+import java.time.ZoneId
 import kotlin.random.Random
 
 // https://github.com/origin-energy/java-snapshot-testing
@@ -23,26 +28,28 @@ import kotlin.random.Random
 @ExtendWith(SnapshotExtension::class)
 class SnapshotTesting {
 
-    private val myImpl = MyImpl()
+    private val myImpl = MyImpl(12345, Clock.fixed(Instant.ofEpochSecond(1662563313), ZoneId.of("UTC")))
 
-    @Test
-    fun `should do something`(expect: Expect) {
-        // TODO use json serializer
-        // TODO use @ParameterizedTest
-        val myResult = myImpl.doSomething(7)
-        expect.toMatchSnapshot(myResult)
+    @ParameterizedTest
+    @ValueSource(ints = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+    fun `should do something`(input: Int, expect: Expect) {
+        val myResult = myImpl.doSomething(input)
+        expect
+            .scenario("$input")
+            .serializer("orderedJson")
+            .toMatchSnapshot(myResult)
     }
 
     @Test
     fun `should do something more`(expect: Expect) {
         val myResult = myImpl.doSomethingMore()
-        expect.toMatchSnapshot(myResult)
+        expect.serializer("orderedJson").toMatchSnapshot(myResult)
     }
 }
 
-class MyImpl {
+class MyImpl(randomSeed: Int, private val clock: Clock) {
 
-    private val random = Random.Default
+    private val random = Random(randomSeed)
 
     fun doSomething(input: Int) = MyResult(
         oneInteger = input,
@@ -58,7 +65,7 @@ class MyImpl {
         oneInteger = random.nextInt(),
         oneDouble = random.nextDouble(),
         oneString = "a".repeat(random.nextInt(10)),
-        oneDateTime = LocalDateTime.now()
+        oneDateTime = LocalDateTime.now(clock)
     )
 }
 
