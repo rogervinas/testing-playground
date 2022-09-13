@@ -1,8 +1,11 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
-import org.gradle.api.tasks.testing.logging.TestLogEvent.*
+import org.gradle.api.tasks.testing.logging.TestLogEvent.FAILED
+import org.gradle.api.tasks.testing.logging.TestLogEvent.PASSED
+import org.gradle.api.tasks.testing.logging.TestLogEvent.SKIPPED
 
 plugins {
     kotlin("jvm") version "1.7.10"
+    id("info.solidsoft.pitest") version "1.9.0" apply false
 }
 
 allprojects {
