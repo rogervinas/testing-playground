@@ -15,7 +15,7 @@ internal class MyImplTest {
     //
     // The quality of your tests can be gauged from the percentage of mutations killed.
 
-    // ./gradlew mutation-testing:clean mutation-testing:test mutation-testing:pitest
+    // ./gradlew -p mutation-testing clean test pitest
 
     private val myImpl = MyImpl()
 
