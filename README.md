@@ -10,6 +10,8 @@
 > Faults (or mutations) are automatically seeded into your code, then your tests are run. If your tests fail then the mutation is killed, if your tests pass then the mutation lived.
 > The quality of your tests can be gauged from the percentage of mutations killed.
 
+See also [github.com/rogervinas/mutation-testing](https://github.com/rogervinas/mutation-testing)
+
 ## Property-based Testing
 
 [Property-based Testing](property-based-testing/src/test/kotlin/PropertyBasedTesting.kt) using [Kotest](https://kotest.io/docs/proptest/property-based-testing.html)
@@ -32,3 +34,5 @@
 > * You need to ensure your test is deterministic for all fields
 > * Does not give great insight to why the snapshot failed
 > * Can be difficult to troll though large snapshot changes where you might only be interested in a small set of fields
+
+See also [github.com/rogervinas/snapshot-testing](https://github.com/rogervinas/snapshot-testing)
