@@ -21,7 +21,7 @@ subprojects {
         implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
-        testImplementation(platform("org.junit:junit-bom:5.9.0"))
+        testImplementation(platform("org.junit:junit-bom:6.0.1"))
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
         testImplementation("org.junit.jupiter:junit-jupiter-api")
         testImplementation("org.junit.jupiter:junit-jupiter-params")
