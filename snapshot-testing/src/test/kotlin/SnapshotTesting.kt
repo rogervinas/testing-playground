@@ -2,9 +2,13 @@ import au.com.origin.snapshots.Expect
 import au.com.origin.snapshots.junit5.SnapshotExtension
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
+import java.time.Clock
+import java.time.Instant
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
+import java.time.ZoneId
+import java.time.ZoneOffset
 import kotlin.random.Random
 
 // https://github.com/origin-energy/java-snapshot-testing
@@ -23,7 +27,10 @@ import kotlin.random.Random
 @ExtendWith(SnapshotExtension::class)
 class SnapshotTesting {
 
-    private val myImpl = MyImpl()
+    private val myImpl = MyImpl(
+        Random(42),
+        Clock.fixed(LocalDateTime.of(2025, 11, 23, 10, 0, 0).toInstant(ZoneOffset.UTC), ZoneId.of("UTC"))
+    )
 
     @Test
     fun `should do something`(expect: Expect) {
@@ -40,9 +47,11 @@ class SnapshotTesting {
     }
 }
 
-class MyImpl {
-
-    private val random = Random.Default
+class MyImpl(
+    private val random: Random,
+    private val clock: Clock
+) {
+    // FIXED private val random = Random.Default
 
     fun doSomething(input: Int) = MyResult(
         oneInteger = input,
@@ -58,7 +67,8 @@ class MyImpl {
         oneInteger = random.nextInt(),
         oneDouble = random.nextDouble(),
         oneString = "a".repeat(random.nextInt(10)),
-        oneDateTime = LocalDateTime.now()
+        // FIXED oneDateTime = LocalDateTime.now()
+        oneDateTime = LocalDateTime.now(clock)
     )
 }
 

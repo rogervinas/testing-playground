@@ -1,5 +1,5 @@
 SnapshotTesting.should do something more=[
-MyResult(oneInteger=1475023305, oneDouble=0.09942229113340806, oneString=aaaaaaaa, oneDateTime=2025-11-29T19:36:49.690194)
+MyResult(oneInteger=972016666, oneDouble=0.4052601144456387, oneString=aa, oneDateTime=2025-11-23T10:00)
 ]
 
 
