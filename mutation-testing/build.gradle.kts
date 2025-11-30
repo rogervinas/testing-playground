@@ -1,7 +1,7 @@
 apply(plugin = "info.solidsoft.pitest")
 
 dependencies {
-    testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.25")
+    testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.28.1")
 }
 
 configure<info.solidsoft.gradle.pitest.PitestPluginExtension> {
