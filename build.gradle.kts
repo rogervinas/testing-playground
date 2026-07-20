@@ -4,7 +4,7 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent.PASSED
 import org.gradle.api.tasks.testing.logging.TestLogEvent.SKIPPED
 
 plugins {
-    kotlin("jvm") version "2.4.0"
+    kotlin("jvm") version "2.4.10"
     id("info.solidsoft.pitest") version "1.19.0"
 }
 
@@ -21,7 +21,7 @@ subprojects {
         implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
-        testImplementation(platform("org.junit:junit-bom:6.1.1"))
+        testImplementation(platform("org.junit:junit-bom:6.1.2"))
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
         testRuntimeOnly("org.junit.platform:junit-platform-launcher")
         testImplementation("org.junit.jupiter:junit-jupiter-api")
